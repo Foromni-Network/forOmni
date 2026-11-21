@@ -14,8 +14,10 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Establish issue labels, proposal templates, maintainer responsibilities, and decision records.
 - [ ] Document project architecture principles, privacy boundaries, and threat model.
 - [ ] Inventory historical repositories and recover reusable work without rewriting their histories.
+- [ ] Establish a discovery inventory for aligned open-source projects, businesses, and communities.
+- [ ] Define a repeatable, respectful upstream contribution and relationship process.
 
-**Exit criteria:** Contributors can understand the mission, find the roadmap, propose work, and report security concerns.
+**Exit criteria:** Contributors can understand the mission, find the roadmap, propose work, report security concerns, and see how external collaboration is handled.
 
 ## Phase 1 — Network discovery MVP
 
@@ -25,6 +27,7 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Design a simple onboarding and participation journey.
 - [ ] Define moderation, abuse reporting, and community trust workflows.
 - [ ] Create an architecture decision record for identity, data ownership, and interoperability.
+- [ ] Define a project relationship record: mission, license, governance, contribution process, mutual value, and relationship status.
 
 **Exit criteria:** A small pilot community can create profiles, discover relevant participants/projects, and share contributions with explicit permissions.
 
@@ -35,6 +38,7 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Make knowledge and reusable assets attributable, searchable, and permission-aware.
 - [ ] Define integration contracts for external communities and independent platforms.
 - [ ] Establish contributor recognition based on useful, verifiable contributions—not speculative financial incentives.
+- [ ] Pilot reciprocal collaborations: contribute useful work upstream and invite independent contributors to participate in Foromni where mutually beneficial.
 
 **Exit criteria:** Independent participants can collaborate across projects and reuse contributions while preserving attribution and control.
 
