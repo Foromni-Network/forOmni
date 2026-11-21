@@ -22,6 +22,18 @@ Keep research focus disciplined while preserving promising future investigations
 
 **Priority ordering:** Reliability and authorization invariants first; full-stack team sizing and research-publishing systems are complementary research that should not delay essential convergence validation. All remain research-only unless separately approved.
 
+## Sequencing decision — full-stack first, handoff protocol next (2026-11-21)
+
+**Current focus:** Finish the end-to-end full-stack development research and the fixed benchmark design before opening a separate agent-to-agent communication/orchestration research workstream. This includes objective → specifications → frontend/backend/auth/database → independent QA → convergence → staging/release boundaries → evidence and costs.
+
+**Study in tandem, narrowly:** Identify only the **minimum handoff and synchronization fields necessary to make the current full-stack reference workflow technically coherent** (task ID/revision, dependency/interface version, source SHA, authenticated worker/grant, candidate/evidence references, and stale-packet recovery). Record unknowns as research questions, not as permission to design or deploy a complete communication platform.
+
+**Next dedicated topic after the full-stack research exit gates:** `NEXT-RD-AGENT-HANDOFF-001` — **Agent-to-agent communication, durable memory, delegation, worker replacement, and synchronization protocol.** Compare portable standards and existing orchestration systems only after the full-stack benchmark identifies the actual handoff failures and functional needs. Research should first determine whether a thin adapter to existing queues/events is sufficient; avoid designing a new universal protocol by assumption.
+
+**Promotion trigger:** The reference app, acceptance oracle, risk/authority boundaries, dependency/revision decisions, hosting comparisons, and fair 1/3/8/adaptive experiment protocol are independently reviewable, with known gaps and a defensible proposed experimental authorization scope. Later implementation/experimentation still needs separate authorization.
+
+**Prioritization rule:** The next-topic record is neither an active independent study nor a canonical task registry entry; it is a sequencing marker. Do not redirect effort from current convergence/full-stack questions, and do not treat any Internet Embassy work as Foromni authorization or shared implementation.
+
 ## Later — Future Topics / Points of Research
 
 These are **parking-lot research opportunities**. Entry here is not a task assignment, implementation permission, funding approval, active initiative or guarantee of demand.
