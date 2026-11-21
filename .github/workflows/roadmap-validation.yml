@@ -4,12 +4,14 @@ on:
     paths:
       - 'roadmap/**'
       - 'scripts/validate-roadmap.mjs'
+      - 'tests/roadmap-validator.test.mjs'
       - '.github/workflows/roadmap-validation.yml'
   push:
     branches: [main]
     paths:
       - 'roadmap/**'
       - 'scripts/validate-roadmap.mjs'
+      - 'tests/roadmap-validator.test.mjs'
       - '.github/workflows/roadmap-validation.yml'
 permissions:
   contents: read
@@ -23,3 +25,5 @@ jobs:
           node-version: '22'
       - name: Validate task registry, status evidence and dependencies
         run: node scripts/validate-roadmap.mjs
+      - name: Run roadmap validator regression tests
+        run: node --test tests/roadmap-validator.test.mjs
