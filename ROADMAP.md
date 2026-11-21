@@ -28,6 +28,7 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Define moderation, abuse reporting, and community trust workflows.
 - [x] Draft an architecture decision record for independent ownership, portability, provenance, least privilege, and interoperability (ADR-0001; proposed, not finalized).
 - [x] Create a project relationship brief template covering mission, license, governance, contribution process, mutual value, and relationship status.
+- [x] Draft a conceptual MVP domain model separating identity, organization, project, capability, contribution, relationship, proposal, and task (not yet a database/API schema).
 
 **Exit criteria:** A small pilot community can create profiles, discover relevant participants/projects, and share contributions with explicit permissions.
 
