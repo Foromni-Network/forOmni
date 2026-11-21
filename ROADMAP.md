@@ -14,8 +14,8 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Establish issue labels, proposal templates, maintainer responsibilities, and decision records.
 - [ ] Document project architecture principles, privacy boundaries, and threat model.
 - [ ] Inventory historical repositories and recover reusable work without rewriting their histories.
-- [ ] Establish a discovery inventory for aligned open-source projects, businesses, and communities.
-- [ ] Define a repeatable, respectful upstream contribution and relationship process.
+- [x] Create an evidence-based discovery register structure (external project entries still pending research).
+- [x] Define a repeatable upstream contribution and relationship process (initial proposal documented; community review pending).
 
 **Exit criteria:** Contributors can understand the mission, find the roadmap, propose work, report security concerns, and see how external collaboration is handled.
 
@@ -26,8 +26,8 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Define contribution records: what was contributed, by whom, under what license or permission, and how it can be reused.
 - [ ] Design a simple onboarding and participation journey.
 - [ ] Define moderation, abuse reporting, and community trust workflows.
-- [ ] Create an architecture decision record for identity, data ownership, and interoperability.
-- [ ] Define a project relationship record: mission, license, governance, contribution process, mutual value, and relationship status.
+- [x] Draft an architecture decision record for independent ownership, portability, provenance, least privilege, and interoperability (ADR-0001; proposed, not finalized).
+- [x] Create a project relationship brief template covering mission, license, governance, contribution process, mutual value, and relationship status.
 
 **Exit criteria:** A small pilot community can create profiles, discover relevant participants/projects, and share contributions with explicit permissions.
 
