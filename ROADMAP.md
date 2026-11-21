@@ -16,6 +16,7 @@ Build a global collaborative network where people, businesses, communities, deve
 - [ ] Inventory historical repositories and recover reusable work without rewriting their histories.
 - [x] Create an evidence-based discovery register structure (external project entries still pending research).
 - [x] Define a repeatable upstream contribution and relationship process (initial proposal documented; community review pending).
+- [x] Document the complementary Foromni/IE product boundary and selective shared-capability flywheel (strategic proposal; licensing, ownership, and maintainership decisions remain open).
 
 **Exit criteria:** Contributors can understand the mission, find the roadmap, propose work, report security concerns, and see how external collaboration is handled.
 
