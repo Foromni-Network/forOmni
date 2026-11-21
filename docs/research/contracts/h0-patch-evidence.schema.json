@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Foromni H0 Minimal Patch Evidence Record v0.1 (proposal only)",
+  "description": "Structural draft for H0, NOT independently authenticated evidence, a deployed evaluator, or a verified experiment. Cross-field and trusted-state verification must be enforced separately.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "trial_id",
+    "contract_revision",
+    "attempt_id",
+    "source",
+    "reviewer",
+    "execution",
+    "grade",
+    "cost",
+    "authorization",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "foromni.h0.patch-evidence.v0.1-proposal"
+    },
+    "trial_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "attempt_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_sha",
+        "patch_digest",
+        "candidate_sha",
+        "evaluated_sha",
+        "clean_checkout"
+      ],
+      "properties": {
+        "base_sha": {
+          "$ref": "#/$defs/git_sha"
+        },
+        "patch_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "candidate_sha": {
+          "$ref": "#/$defs/git_sha"
+        },
+        "evaluated_sha": {
+          "$ref": "#/$defs/git_sha"
+        },
+        "clean_checkout": {
+          "type": "boolean"
+        },
+        "source_observer": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "principal",
+        "suite_digest",
+        "environment_digest",
+        "fixture_digest",
+        "independent_of_worker_verified"
+      ],
+      "properties": {
+        "principal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "suite_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "environment_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "fixture_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "independent_of_worker_verified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive_required",
+        "positive_executed",
+        "negative_required",
+        "negative_executed",
+        "observed_test_process",
+        "cases"
+      ],
+      "properties": {
+        "positive_required": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "positive_executed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "negative_required": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "negative_executed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "observed_test_process": {
+          "type": "boolean"
+        },
+        "exit_code": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "case_id",
+              "status",
+              "kind"
+            ],
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "positive",
+                  "negative",
+                  "integrity",
+                  "policy",
+                  "economic"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "pass",
+                  "fail",
+                  "not_run",
+                  "unknown",
+                  "infrastructure_error"
+                ]
+              },
+              "evidence_digest": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/sha256"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "grade": {
+      "enum": [
+        "VERIFIED_ACCEPTED_FOR_CANDIDATE",
+        "VERIFIED_REJECTED",
+        "INCOMPLETE",
+        "INVALID_PATCH",
+        "NO_TEST_EXECUTION",
+        "STALE_EVIDENCE",
+        "INFRA_ERROR",
+        "UNKNOWN_OR_AMBIGUOUS",
+        "SECURITY_BLOCKED"
+      ]
+    },
+    "reason_tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "total_amount",
+        "reconciliation",
+        "human_minutes",
+        "retries"
+      ],
+      "properties": {
+        "currency": {
+          "const": "USD"
+        },
+        "total_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "reconciliation": {
+          "enum": [
+            "verified",
+            "partial",
+            "unknown"
+          ]
+        },
+        "human_minutes": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approved",
+        "approval_ref",
+        "allowed_external_effects"
+      ],
+      "properties": {
+        "approved": {
+          "type": "boolean"
+        },
+        "approval_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "allowed_external_effects": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "git_sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}
