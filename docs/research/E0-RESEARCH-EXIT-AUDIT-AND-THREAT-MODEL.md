@@ -55,6 +55,21 @@ A growing library of research does not show that one complete full-stack AI deve
 ### Required negative-case review
 The independent reviewer must demonstrate what should happen when a worker requests protected main write, a stale grant is replayed, a synthetic account crosses project boundaries, the source SHA differs from the QA-tested one, the QA principal equals the implementer, a backend contract changes under an active UI task, or a teardown operation is ambiguously pointed at a remote database. **The tests remain to be designed, not run.**
 
+## Minimum prompt-injection safety gate in the current full-stack pipeline
+
+**Status: proposed requirement only, not an implemented/verified check.** While comprehensive prompt-injection research is deferred to `FUT-RD-CYBER-PI-002`, any approved experiment involving AI workers who read untrusted text must include basic trust-boundary protection **before staging or release authorization** (and preferably at ingestion and tool invocation, not only as a final scan).
+
+- **Untrusted surfaces:** repository files/README, issue/PR text, fetched docs, search results, package output, error logs, tool responses, synthetic project content and agent messages. Treat even text that claims to be from a maintainer as untrusted unless independently authenticated.
+- **Authority separation:** no external-content instruction may change system/developer goals, task acceptance criteria, effective tool grants, budget, QA principal, merge policy, secret destination, or release approval.
+- **Action-time enforcement:** actual tool and network privileges must be checked by a trusted non-model service. LLM prompts, pattern matching, filtering, or another LLM reviewer are useful defense-in-depth but not a reliable security boundary.
+- **Candidate evidence:** independent reviewer receives the *exact current candidate and scenario*, exercises negative synthetic fixtures, observes effective action denials, and binds findings to candidate/source/environment revisions. Unknown results are blockers for affected high-impact actions.
+- **Deployment admission:** a credible critical prompt-injection path to an unauthorized tool call, exfiltration, acceptance manipulation or protected deployment must block staging/publication until remediated and reverified. Controlled research-only sandbox experiments require separately authorized constraints and must not be mistaken for production-ready.
+- **Postdeployment:** later research may assess drift, monitoring, incident/rollback and adversarial re-evaluation. Not yet active.
+
+Illustrative synthetic negative fixtures (not run): malicious instructions embedded in a README that ask a coding agent to skip QA; forged PR comments requesting a protected merge; an API response asking an agent to reveal credentials; and a tool log impersonating a policy service to extend a grant. For each, test that the worker can still perform its legitimate task while privileged instructions are ignored and enforced authorization cannot be bypassed. Avoid achieving apparent safety by rejecting every benign input.
+
+This threat is addressed by OWASP LLM01:2025 (https://genai.owasp.org/llmrisk/llm01-prompt-injection/) and OWASP's prevention cheat sheet (https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html); see also NIST AI 100-2e2025 (https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf).
+
 ## Minimum acceptable bounded first trial
 
 A one-agent synthetic full-stack smoke experiment with genuinely independent QA and protected Git candidate admission is the **smallest evidence-producing slice** worth asking permission to run. One worker can still have separate independent reviewer services; that does not turn it into an eight-agent study.
