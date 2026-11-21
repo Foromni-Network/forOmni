@@ -48,6 +48,16 @@ These are **parking-lot research opportunities**. Entry here is not a task assig
 | FUT-RD-EDU-006 | Multilingual collective learning and edutainment | How can open knowledge be translated, locally reviewed and made reusable with factual corrections? | Research provenance and publication controls defined | Deferred |
 | FUT-RD-RESILIENCE-007 | Supply-chain and service resilience | How can AINOs keep operating during provider, network, or dependency outages without false completion? | Service recovery and scoped authority evaluation | Deferred |
 
+### Future subtopic: deployment-stage prompt-injection security gate
+
+**Parking ID:** `FUT-RD-CYBER-PI-002` — *AI prompt-injection defenses and deployment acceptance*. This is a **deferred focused investigation under** `FUT-RD-CYBER-001`, not a duplicate canonical task and not an active security product initiative.
+
+When the separate cybersecurity track is authorized, evaluate direct and indirect prompt-injection threat models for autonomous agents consuming repository files, PR comments, tickets, logs, web content, retrieved knowledge, tool responses and inter-agent messages. Research a dedicated **predeployment security admission gate** that assesses untrusted-content boundaries, action-time tool permissions, provenance and delegated authority, data exfiltration controls, and adversarial evaluation. Include deployment-blocking conditions, evaluator independence, regression tests and continuous post-release monitoring.
+
+**Current P0 overlap (narrow and necessary):** The ongoing full-stack experiment pipeline must treat untrusted instructions as data and prevent them from becoming grants, instructions for a privileged worker, QA approvals or release authority. Document a minimal planned security gate and synthetic negative fixtures; do not launch dedicated cybersecurity R&D, real red-team operations or a live deployment under this item.
+
+**Research sources to review on future promotion:** OWASP LLM01:2025 (https://genai.owasp.org/llmrisk/llm01-prompt-injection/), OWASP LLM Prompt Injection Prevention Cheat Sheet (https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html), NIST AI 100-2e2025 (https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf). No mitigation is complete on its own; prompt-based instructions and model-based scanners are not authorization boundaries.
+
 ### Cybersecurity parking-lot boundaries
 
 **Intent:** defensive AI-native security research potentially spanning developer supply-chain checks, secure integration, audit, SIEM data intake and alert analysis, human-authorized containment, tenant privacy and community cyber hygiene. The existing convergence security gates **remain active non-negotiable safeguards**; deferring this *separate expanded cybersecurity R&D track* does not defer baseline safety, identity/permission checks or threat modeling for the convergence system.
