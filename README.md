@@ -13,6 +13,7 @@ Our mission is larger than any single technology. We are exploring open technolo
 - [Founding Charter](FOUNDING-CHARTER.md) — our North Star and founding principles.
 - [Roadmap](ROADMAP.md) — the proposed path from network foundation to an open, interoperable ecosystem.
 - [Ecosystem Participation Model](ECOSYSTEM-PARTICIPATION-MODEL.md) — how we build, reuse, contribute upstream, and form reciprocal relationships.
+- [Foromni and IE Product Boundaries](PRODUCT-BOUNDARIES-AND-SHARED-CAPABILITIES.md) — how shared ecosystem utilities and IE's member-facing product reinforce one another without collapsing ownership or scope.
 - [Architecture Decision 0001](docs/architecture/ADR-0001-network-boundaries-and-portability.md) — independence, portability, provenance, least privilege, and trust boundaries.
 - [MVP Domain Model](docs/architecture/MVP-DOMAIN-MODEL.md) — proposed core concepts and privacy boundaries for the first network workflows.
 - [Capability Exchange Contract](docs/architecture/CAPABILITY-EXCHANGE-CONTRACT.md) — proposed rules for describing and requesting capabilities across independent systems.
