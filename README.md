@@ -12,6 +12,7 @@ Our mission is larger than any single technology. We are exploring open technolo
 
 - [Founding Charter](FOUNDING-CHARTER.md) — our North Star and founding principles.
 - [Roadmap](ROADMAP.md) — the proposed path from network foundation to an open, interoperable ecosystem.
+- [Ecosystem Participation Model](ECOSYSTEM-PARTICIPATION-MODEL.md) — how we build, reuse, contribute upstream, and form reciprocal relationships.
 - [Contributing](CONTRIBUTING.md) — how to participate and improve the project.
 - [Security](SECURITY.md) — how to report security concerns responsibly.
 
@@ -21,6 +22,12 @@ Our mission is larger than any single technology. We are exploring open technolo
 2. A contribution system that makes knowledge and useful work attributable and reusable.
 3. Collaboration tools that help independent participants coordinate while retaining their identity and control.
 4. Interoperability for human-led and AI-native operations across independent systems.
+
+## How we grow
+
+We do not intend to rebuild everything or extract value from other communities. We discover promising work, understand its context, contribute useful improvements upstream, integrate existing capabilities where appropriate, and invite reciprocal participation where there is mutual interest.
+
+Internet Embassy is an independent founding ecosystem and early proving ground. Other organizations and communities should be able to participate on equal terms.
 
 ## Participate
 
