@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "project": "foromni",
+  "canonical_repository": "Foromni-Network/forOmni",
+  "source_document": "ROADMAP.md",
+  "status_lifecycle": [
+    "proposed",
+    "ready",
+    "running",
+    "review",
+    "batch_ready",
+    "build_ready",
+    "integration_ready",
+    "integrated",
+    "completed"
+  ],
+  "tasks": [
+    {
+      "id": "FOR-001",
+      "title": "Publish and review foundational roadmap and project governance",
+      "phase": 0,
+      "status": "review",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [],
+      "acceptance": [
+        "Foundational roadmap is reviewed and merged to main",
+        "Maintainer roles and contributing/security guidance are accepted"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "FOR-002",
+      "title": "Establish repository-native task registry and automated lifecycle validation",
+      "phase": 0,
+      "status": "running",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-001"
+      ],
+      "acceptance": [
+        "Machine-readable task registry exists in canonical repository",
+        "CI validates task records and dependencies",
+        "Changes undergo PR review"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "FOR-003",
+      "title": "Recover legacy Foromni repositories and issues without altering history",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-001"
+      ],
+      "acceptance": [
+        "Legacy projects and issues inventoried with source links",
+        "Reusable implementations and ownership identified",
+        "Migration decisions recorded without claiming unverified completion"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "FOR-004",
+      "title": "Approve minimum privacy and trust model for discovery MVP",
+      "phase": 1,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-001"
+      ],
+      "acceptance": [
+        "Public/private fields and server-side access rules defined",
+        "Threat model and ownership decisions reviewed",
+        "Acceptance test cases specified"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "FOR-005",
+      "title": "Implement pilot profile and project discovery vertical slice",
+      "phase": 1,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-004"
+      ],
+      "acceptance": [
+        "Pilot users can create and manage permitted profiles",
+        "Visitors can discover published projects",
+        "Automated authorization and persistence tests pass"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "FOR-006",
+      "title": "Demonstrate bounded cross-system capability exchange",
+      "phase": 3,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-004"
+      ],
+      "acceptance": [
+        "Two independent systems exchange scoped task with explicit authorization",
+        "Revocation and audit behavior independently tested",
+        "No production secrets or privileged IE data are shared"
+      ],
+      "evidence": []
+    }
+  ]
+}
