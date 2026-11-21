@@ -113,6 +113,225 @@
         "No production secrets or privileged IE data are shared"
       ],
       "evidence": []
+    },
+    {
+      "id": "FOR-007",
+      "title": "Freeze minimal AINO execution-MVP contract and acceptance requirements",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-001"
+      ],
+      "acceptance": [
+        "Review and version-pin Member, Agent, Task, Lease, Sandbox, Attempt, Candidate, Evidence and Decision contracts",
+        "Independent reviewer records approved behavior, exclusions and exact source revision",
+        "Release/production rights remain separate from candidate acceptance"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/HYBRID-AINO-BOTTOM-UP-EXPERIMENTAL-LADDER-V0.1.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-GLOBAL-OPEN-SOURCE-CONTRIBUTOR-SANDBOX-TRUST-BOUNDARIES-V0.1.md"
+      ]
+    },
+    {
+      "id": "FOR-008",
+      "title": "Qualify one disposable sandbox runner against required safety boundaries",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-007"
+      ],
+      "acceptance": [
+        "Select version-pinned Bubblewrap or NsJail runner with license/dependency review and exact host profile",
+        "Independent reviewer observes all mandatory filesystem, network, socket, process, syscall and resource denial tests",
+        "No untrusted code execution until isolation gates pass; unsupported controls fail closed"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-SBX-P0-MINIMUM-ENFORCEABLE-SANDBOX-POLICY-V0.1.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-SBX-R1-BUBBLEWRAP-NSJAIL-PAIRED-ADMISSION-MATRIX-V0.1.md"
+      ]
+    },
+    {
+      "id": "FOR-009",
+      "title": "Build minimal persistent agent, task and attempt registry",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-002",
+        "FOR-007"
+      ],
+      "acceptance": [
+        "Create and query persistent task, stable agent identity, incarnation and bounded attempts",
+        "Task ownership and permissions are enforced by a trusted principal, not agent-provided IDs",
+        "Persistence, restart behavior, project scope and stale lease handling independently tested"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/GLOBAL-AGENT-ROADMAP-EXECUTION.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-GLOBAL-OPEN-SOURCE-CONTRIBUTOR-SANDBOX-TRUST-BOUNDARIES-V0.1.md"
+      ]
+    },
+    {
+      "id": "FOR-010",
+      "title": "Execute first bounded AI coding worker and export patch-only candidate",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-008",
+        "FOR-009"
+      ],
+      "acceptance": [
+        "One approved coding worker completes a synthetic task using a scoped task lease and tested runner",
+        "Only a diff/patch and untrusted worker logs leave the worker boundary",
+        "Record model/tool/runtime/retry/human costs and block unauthorized GitHub write or production access"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-TINY-PATCH-EXPERIMENT-PACKET-V0.1.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-E0A-002-INDEPENDENT-REVIEWER-CUSTODY-AND-PATCH-ONLY-TRIAL.md"
+      ]
+    },
+    {
+      "id": "FOR-011",
+      "title": "Build separately authenticated source observer and independent QA evaluator",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-007",
+        "FOR-008"
+      ],
+      "acceptance": [
+        "Source observer independently reconstructs clean candidate SHA from frozen base and worker patch",
+        "Evaluator has separately controlled test suite, fixture store and execution identity",
+        "Correct candidate can pass; wrong, stale, forged PASS and zero-test candidates cannot pass"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-M-FIRST-LOCAL-EXPERIMENT-RESULTS-2026-11-21.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-PATCH-LAB-REPRODUCIBLE-HANDOFF-AND-FALSE-GREEN-CHALLENGES-V0.2.md"
+      ]
+    },
+    {
+      "id": "FOR-012",
+      "title": "Persist source-bound evidence, status history and complete attempt economics",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-009",
+        "FOR-011"
+      ],
+      "acceptance": [
+        "Persist task revision, assignment, attempt, observed source SHA, evaluator result and reason tags",
+        "Track all attempts, time, model/runner/QA/human costs and missing cost completeness explicitly",
+        "Independent source evidence never conflates candidate, integrated, released and beneficiary outcomes"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-PATCH-LAB-REPRODUCIBLE-HANDOFF-AND-FALSE-GREEN-CHALLENGES-V0.2.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/GLOBAL-AGENT-ROADMAP-EXECUTION.md"
+      ]
+    },
+    {
+      "id": "FOR-013",
+      "title": "Provide founder/operator task intake and acceptance control",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-009",
+        "FOR-011",
+        "FOR-012"
+      ],
+      "acceptance": [
+        "Human can create and assign a task, inspect verified evidence, request repair or reject/accept",
+        "Agent cannot self-approve independent QA, integration, release or policy escalation",
+        "Workflow usable through minimal CLI or interface with authenticated audit history"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-E0A-002-INDEPENDENT-REVIEWER-CUSTODY-AND-PATCH-ONLY-TRIAL.md"
+      ]
+    },
+    {
+      "id": "FOR-014",
+      "title": "Independently validate end-to-end founder AINO vertical slice",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-010",
+        "FOR-011",
+        "FOR-012",
+        "FOR-013"
+      ],
+      "acceptance": [
+        "Demonstrate task creation → assignment → isolated worker → reconstructed patch → real QA → human decision → persistent history",
+        "Repeat positive and negative cases including credential denial, stale source, interrupted attempt and forged PASS",
+        "Independent reviewer records exact checked source, limitations, failed cases and full-cost denominator"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-S-LOCAL-CUSTODY-EXPERIMENT-RESULTS-2026-11-21.md",
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/H0-R-LOCAL-RUNNER-NAMESPACE-CAPABILITY-AUDIT-2026-11-21.md"
+      ]
+    },
+    {
+      "id": "FOR-015",
+      "title": "Prepare release-ready founder AINO execution MVP",
+      "phase": 0,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-001",
+        "FOR-002",
+        "FOR-014"
+      ],
+      "acceptance": [
+        "Document reproducible clean setup, security boundaries, operator use, rollback and known limitations",
+        "Independent acceptance tied to exact integrated candidate source; protected branch/merge controls independently verified",
+        "Founder separately authorizes release; no assumption that a passing local candidate has shipped"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/E0-V0.7-INDEPENDENT-REVIEW-DECISION-DOCKET.md"
+      ]
+    },
+    {
+      "id": "FOR-016",
+      "title": "Enable first portable external open-source contribution pilot",
+      "phase": 2,
+      "status": "proposed",
+      "owner": null,
+      "issue_url": null,
+      "dependencies": [
+        "FOR-015",
+        "FOR-004"
+      ],
+      "acceptance": [
+        "External contributor can submit patch from own compute without gaining Foromni trusted GitHub or QA rights",
+        "A maintainer reconstructs and independently evaluates exact source with permission and license provenance",
+        "Document asynchronous participation, tenant isolation, moderation and contribution policy with privacy-safe records"
+      ],
+      "evidence": [],
+      "research_refs": [
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-GLOBAL-OPEN-SOURCE-CONTRIBUTOR-SANDBOX-TRUST-BOUNDARIES-V0.1.md"
+      ]
     }
   ]
 }
