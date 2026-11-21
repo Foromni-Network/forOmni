@@ -118,7 +118,7 @@
       "id": "FOR-007",
       "title": "Freeze minimal AINO execution-MVP contract and acceptance requirements",
       "phase": 0,
-      "status": "proposed",
+      "status": "review",
       "owner": null,
       "issue_url": null,
       "dependencies": [
@@ -129,10 +129,19 @@
         "Independent reviewer records approved behavior, exclusions and exact source revision",
         "Release/production rights remain separate from candidate acceptance"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "type": "contract_candidate",
+          "sha": "64b14dd9405e6c8b8914b23e0fd07251328d7ad1",
+          "url": "https://github.com/Foromni-Network/forOmni/blob/64b14dd9405e6c8b8914b23e0fd07251328d7ad1/docs/architecture/FOR-007-AINO-EXECUTION-MVP-CONTRACT-V1.0-RC1.md",
+          "result": "awaiting_independent_review",
+          "note": "Document authored and versioned; not independent acceptance, tests or implementation"
+        }
+      ],
       "research_refs": [
         "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/HYBRID-AINO-BOTTOM-UP-EXPERIMENTAL-LADDER-V0.1.md",
-        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-GLOBAL-OPEN-SOURCE-CONTRIBUTOR-SANDBOX-TRUST-BOUNDARIES-V0.1.md"
+        "https://github.com/Foromni-Network/forOmni/blob/research/global-agent-roadmap-execution/docs/research/ADR-GLOBAL-OPEN-SOURCE-CONTRIBUTOR-SANDBOX-TRUST-BOUNDARIES-V0.1.md",
+        "https://github.com/Foromni-Network/forOmni/blob/feat/repo-native-roadmap-system/docs/architecture/FOR-007-AINO-EXECUTION-MVP-CONTRACT-V1.0-RC1.md"
       ]
     },
     {
