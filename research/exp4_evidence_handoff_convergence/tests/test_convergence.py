@@ -35,10 +35,14 @@ class Evidence(unittest.TestCase):
     def test_unknown_evaluator_and_self_review_rejected(self):
         self.assertEqual(verify_receipt(receipt('A',1,evaluator_id='fake'),KEYS,project_id='P-A',source_sha=SHA,suite_id='suite-1')[1],'unknown_evaluator')
         self.assertEqual(verify_receipt(receipt('A',1,evaluator_id='A'),{'A':KEYS['qa-external']},project_id='P-A',source_sha=SHA,suite_id='suite-1')[1],'self_review')
-    def test_distinct_receipt_ids_cannot_replay_same_attempt(self):
-        r=receipt('A',1)
+    def test_distinct_signed_payloads_cannot_replay_same_attempt(self):
+        first=receipt('A',1)
+        conflicting=receipt('A',1,'REJECT')  # separately signed but same attempt identity
         with self.assertRaisesRegex(ValueError,'duplicate_valid_attempt'):
-            verified_counts((r,r),KEYS,project_id='P-A',source_sha=SHA,suite_id='suite-1')
+            verified_counts((first,conflicting),KEYS,project_id='P-A',source_sha=SHA,suite_id='suite-1')
+    def test_wrong_signing_key_rejected(self):
+        r=receipt('A',1)
+        self.assertEqual(verify_receipt(r,{'qa-external':b'wrong-key'},project_id='P-A',source_sha=SHA,suite_id='suite-1')[1],'invalid_signature')
     def test_rejected_verdict_counts_denominator_and_cost(self):
         c,rej,cost=verified_counts((receipt('A',1),receipt('A',2,'REJECT')),KEYS,project_id='P-A',source_sha=SHA,suite_id='suite-1')
         self.assertEqual(c['A'],(1,2));self.assertEqual(cost['A'],20);self.assertEqual(rej,{})
